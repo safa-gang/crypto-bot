@@ -2,7 +2,7 @@
 import telebot
 import requests
 
-TOKEN = "توکن خودت اینجا"
+TOKEN = "7505752036:AAHfucAapryCh8-pBHzfIOH2JayvyRlEDR0"
 bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start'])
