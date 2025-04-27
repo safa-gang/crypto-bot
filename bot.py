@@ -7,7 +7,7 @@ bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-    bot.reply_to(message, "Hey! I'm your crypto price bot. Send /price to get the latest Bitcoin price!")
+    bot.reply_to(message, "سلام داداش صفا! خوش اومدی به ربات 🫡")
 
 @bot.message_handler(commands=['price'])
 def send_price(message):
@@ -19,4 +19,4 @@ def send_price(message):
     except Exception as e:
         bot.reply_to(message, "Error fetching price. Try again later.")
 
-bot.polling(non_stop=True)
+bot.infinity_polling()
