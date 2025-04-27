@@ -12,10 +12,10 @@ def send_welcome(message):
 @bot.message_handler(commands=['price'])
 def send_price(message):
     try:
-        response = requests.get("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd")
+        response = requests.get("https://api.coincap.io/v2/assets/bitcoin")
         data = response.json()
-        price = data['bitcoin']['usd']
-        bot.reply_to(message, f"Bitcoin Price (Coingecko): ${float(price):,.2f}")
+        price = data['data']['priceUsd']
+        bot.reply_to(message, f"Bitcoin Price (Coincap): ${float(price):,.2f}")
     except Exception as e:
         bot.reply_to(message, "Error fetching price. Try again later.")
 
